@@ -22,52 +22,85 @@
     <body>
     
         <!-- main contain area -->
-        <div class="block_container container-fluid"> 
+        <div class="block_container container"> 
 
-            <h1 class="text-center">GIT commands</h1>
+            <h1 class="text-center">Git Commands</h1>
 
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                    <div class="table-responsive">
+                       
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <caption class="h4">Getting & Creating Projects</caption>
+                                <tr>
+                                    <th class="text-center">Command</th>
+                                    <th class="text-center">Description</th> 
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git init</code></td>
+                                        <td>Initialize a local Git repository</td> 
+                                    </tr> 
+                                    <tr>
+                                        <td><code>git clone ssh://git@github.com/[username]/[repository-name].git</code></td>
+                                        <td>Create a local copy of a remote repository</td> 
+                                    </tr> 
+                                </tbody>                                
+                        </table>
+
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <caption class="h4">Basic Snapshotting</caption>
+                                <tr>
+                                    <th class="text-center">Command</th>
+                                    <th class="text-center">Description</th> 
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git status</code></td>
+                                        <td>Check status</td> 
+                                    </tr>   
+                                    <tr>
+                                        <td><code>git add [file-name.txt]</code></td>
+                                        <td>Add a file to the staging area</td> 
+                                    </tr>   
+                                    <tr>
+                                        <td><code>git add -A</code></td>
+                                        <td>Add all new and changed files to the staging area</td> 
+                                    </tr>   
+                                    <tr>
+                                        <td><code>git commit -m "[commit message]"</code></td>
+                                        <td>Commit changes</td> 
+                                    </tr>   
+                                    <tr>
+                                        <td><code>git rm -r [file-name.txt]</code></td>
+                                        <td>Remove a file (or folder)</td> 
+                                    </tr>     
+                                </tbody>                                
+                        </table>
+
+
+
+
+
+
+                    </div>
+                    
+
+
+
+                </div>
+            </div>
 
         </div>
         <!-- main contain area -->
-
-
-        <!-- footer section-->
-        <section class="footer" style="position:fixed;bottom:0;left:0;right:0;margin:0 auto;padding:15px 0;background:gray;">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6 text-left">
-                        <div class="copyRight">
-                            Copyright <i class="fa fa-copyright"></i> Company Name. All Rights Reserved
-                            <span style="color: #c0c0c0;">Develop by - Hasan</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 dateTime text-right">
-                        <span id="currentDateTime" style="color: #fff"></span>
-                    </div>
-                </div>
-            </div>
-        </section><!-- /end footer section-->
 
         <script type='text/javascript' src="assets/js/functions.js"></script>
 
     </body>
 </html>
-
-<script>
-    setInterval(function(){
-        var d = new Date(),
-            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-            today = d.getDay(),
-            ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        var second=d.getSeconds();
-        var timezone = (d.getTimezoneOffset())/(-60);
-        var symbol=((String(timezone).search("-"))<0)?'+':'';
-        var areaZoneName=Intl.DateTimeFormat().resolvedOptions().timeZone;
-        var text=" UTC "+symbol+" "+timezone;
-        var newtiemx= days[today]+" "+ d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+":"+second+" "+text;
-        document.getElementById("currentDateTime").innerHTML =newtiemx
-    }, 100);
-</script>
+ 
