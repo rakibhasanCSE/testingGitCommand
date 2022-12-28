@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> GIT commands </title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+         <link rel="shortcut icon" href="assets/images/favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- all css files here -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/css/style.css?v=1.1" rel="stylesheet" type="text/css">
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+
+        <!-- load jquery file -->
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type='text/javascript' src="assets/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+    
+        <!-- main contain area -->
+        <div class="block_container container-fluid"> 
+
+            <h1 class="text-center">GIT commands</h1>
+
+
+        </div>
+        <!-- main contain area -->
+
+
+        <!-- footer section-->
+        <section class="footer" style="position:fixed;bottom:0;left:0;right:0;margin:0 auto;padding:15px 0;background:gray;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <div class="copyRight">
+                            Copyright <i class="fa fa-copyright"></i> Company Name. All Rights Reserved
+                            <span style="color: #c0c0c0;">Develop by - Hasan</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 dateTime text-right">
+                        <span id="currentDateTime" style="color: #fff"></span>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /end footer section-->
+
+        <script type='text/javascript' src="assets/js/functions.js"></script>
+
+    </body>
+</html>
+
+<script>
+    setInterval(function(){
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            today = d.getDay(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        var second=d.getSeconds();
+        var timezone = (d.getTimezoneOffset())/(-60);
+        var symbol=((String(timezone).search("-"))<0)?'+':'';
+        var areaZoneName=Intl.DateTimeFormat().resolvedOptions().timeZone;
+        var text=" UTC "+symbol+" "+timezone;
+        var newtiemx= days[today]+" "+ d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+":"+second+" "+text;
+        document.getElementById("currentDateTime").innerHTML =newtiemx
+    }, 100);
+</script>
