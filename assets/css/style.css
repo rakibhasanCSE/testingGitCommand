@@ -1,7 +1,17 @@
+.block_container{
+    margin-bottom: 50px;
+}
 .block-bg{
     background: #eee;
 }
 code{
     color: #333;
-    background-color: #ddd;
+    background-color: #eee;
+}
+.text-title{
+    background: #444;
+    color: #fff;
+}
+td{
+    font-size: 18px;
 }
